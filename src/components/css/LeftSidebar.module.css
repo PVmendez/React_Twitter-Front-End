@@ -8,10 +8,6 @@
   position: fixed;
 }
 
-.sidebarmenuitemactive .sidebarmenuitemicon {
-  filter: invert(67%) sepia(60%) saturate(4956%) hue-rotate(176deg) brightness(95%) contrast(99%);
-}
-
 .sidebarmenu button {
   margin-top: 2em;
 }

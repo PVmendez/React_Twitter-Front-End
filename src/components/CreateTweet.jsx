@@ -1,7 +1,8 @@
-import "./CreateTweet.css";
+import "./css/CreateTweet.css";
 import Avatar from "./Avatar";
 import TwittButton from "./TwittButton";
 import SmallIcon from "./SmallIcon";
+
 function CreateTweet() {
   return (
     <>

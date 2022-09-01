@@ -1,4 +1,4 @@
-import styles from "./RightSidebar.module.css";
+import styles from "./css/RightSidebar.module.css";
 import SideBarSection from "./SideBarSection";
 import TrendsBlock from "./TrendsBlock";
 import WhoToFollowBlock from "./WhoToFollowBlock";

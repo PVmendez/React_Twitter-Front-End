@@ -1,4 +1,4 @@
-import styles from "./TrendsBlock.module.css";
+import styles from "./css/TrendsBlock.module.css";
 
 function TrendsBlock(props) {
   return (

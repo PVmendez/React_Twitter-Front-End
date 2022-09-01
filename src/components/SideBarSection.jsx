@@ -1,4 +1,4 @@
-import styles from "./SideBarSection.module.css";
+import styles from "./css/SideBarSection.module.css";
 
 function SideBarSection(props) {
   return (

@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import Avatar from "./Avatar";
 const likes = true;
 

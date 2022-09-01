@@ -1,5 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-
 function Avatar() {
   return (
     <div className="me-3 flex-shrink-0">

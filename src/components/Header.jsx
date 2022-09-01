@@ -1,9 +1,9 @@
-import "./Header.css";
+import "./css/Header.css";
 
-function Header({ text }) {
+function Header({ title }) {
   return (
     <div className="header">
-      <h1>{text}</h1>
+      <h1>{title}</h1>
     </div>
   );
 }

@@ -1,15 +1,11 @@
-import styles from "./WhoToFollowBlock.module.css";
-
+import styles from "./css/WhoToFollowBlock.module.css";
+import UserInfo from "./UserInfo";
 function WhoToFollowBlock(props) {
   return (
     <>
       <div className={`${styles.whotofollowblock}`}>
-        <img className={`${styles.whotofollowlogo}`} src="" alt="" />
         <div className={`${styles.whotofollowcontent}`}>
-          <div>
-            <div className={`${styles.whotofollowname}`}>{props.name}</div>
-            <div className={`${styles.whotofollowauthorslug}`}>@{props.userName}</div>
-          </div>
+          <UserInfo />
           <div className={`${styles.whotofollowbutton}`}>Follow</div>
         </div>
       </div>

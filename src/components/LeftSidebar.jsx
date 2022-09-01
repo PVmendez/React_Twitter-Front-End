@@ -3,7 +3,7 @@ import styles from "./LeftSidebar.module.css";
 
 export const LeftSidebar = () => {
   return (
-    <div className={`${styles.layoutleftsidebar}`}>
+    <div>
         <img src="twitter" className={`${styles.brand}`} alt="" />
         <div className={`${styles.sidebarmenu}`}>
           <div className={`${styles.sidebarmenuitem} ${styles.sidebarmenuitemactive}`}>

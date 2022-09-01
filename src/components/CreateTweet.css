@@ -8,11 +8,7 @@ textarea {
   border: none !important;
 }
 
-.form-footer svg {
+.form-footer img {
   width: 1.125rem;
-}
-
-.btn-primary {
-  background-color: #1d9bf0;
-  color: white;
+  fill: var(--color-primary) !important;
 }

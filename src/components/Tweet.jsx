@@ -9,10 +9,10 @@ function Tweet() {
         <Avatar />
         <div className="flex-fill">
           <div className="d-flex justify-content-between align-items-center">
-            <a href="/none" class="fs-7 fw-bold m-0 text-black text-decoration-none">
-              <span class="hover-underline">Ibai Llanos</span>
-              <span class="fw-normal text-secondary ms-1">@ibai&middot;</span>
-              <span class="fw-normal text-secondary ms-1 hover-underline">1m</span>
+            <a href="/none" className="fs-7 fw-bold m-0 text-black text-decoration-none">
+              <span className="hover-underline">Ibai Llanos</span>
+              <span className="fw-normal text-secondary ms-1">@ibai&middot;</span>
+              <span className="fw-normal text-secondary ms-1 hover-underline">1m</span>
             </a>
 
             <div className="dropdown">

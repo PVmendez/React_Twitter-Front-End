@@ -1,114 +1,24 @@
-import React from "react";
-import styles from "./RightSidebar.module.css"
+import styles from "./RightSidebar.module.css";
+import SideBarSection from "./SideBarSection";
+import TrendsBlock from "./TrendsBlock";
+import WhoToFollowBlock from "./WhoToFollowBlock";
 
 export const RightSidebar = () => {
   return (
-        <div className={`${styles.trendsforyou}`}>
-          <div className={`${styles.trendsforyou}`}>
-            <div className={`${styles.trendsforyoublock}`}>
-              <div className={`${styles.trendsforyouheading}`}>
-                Trends for you
-              </div>
-            </div>
-            <div className={`${styles.trendsforyoublock}`}>
-              <div className={`${styles.trendsforyoumetainformation}`}>
-                Trending in Germany
-              </div>
-              <div className={`${styles.trendsforyoutrendname}`}>
-                #iPhone12
-              </div>
-              <div className={`${styles.trendsforyoumetainformation}`}>
-                155k Tweets
-              </div>
-            </div>
-            <div className={`${styles.trendsforyoublock}`}>
-              <div className={`${styles.trendsforyoumetainformation}`}>
-                Trending in Germany
-              </div>
-              <div className={`${styles.trendsforyoutrendname}`}>
-                #AmazonPrimeDay
-              </div>
-            </div>
-            <div className={`${styles.trendsforyoublock}`}>
-              <div className={`${styles.trendsforyoumetainformation}`}>
-                Trending  Trending
-              </div>
-              <div className={`${styles.trendsforyoutrendname}`}>
-                #autos
-              </div>
-              <div className={`${styles.trendsforyoumetainformation}`}>
-                2,800 Tweets
-              </div>
-            </div>
-          </div>
-          <div className={`${styles.whotofollow}`}>
-            <div className={`${styles.whotofollowblock}`}>
-              <div className={`${styles.whotofollowheading}`}>
-                Who to follow
-              </div>
-            </div>
-            <div className={`${styles.whotofollowblock}`}>
-              <img
-                className={`${styles.whotofollowlogo}`}
-                src=""
-                alt=""
-              />
-              <div className={`${styles.whotofollowcontent}`}>
-                <div>
-                  <div className={`${styles.whotofollowname}`}>
-                    Pablo Méndez
-                  </div>
-                  <div className={`${styles.whotofollowauthorslug}`}>
-                    @pmendez
-                  </div>
-                </div>
-                <div className={`${styles.whotofollowbutton}`}>
-                  Follow
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.whotofollowblock}`}>
-              <img
-                className={`${styles.whotofollowlogo}`}
-                src=""
-                alt=""
-              />
-              <div className={`${styles.whotofollowcontent}`}>
-                <div>
-                  <div className={`${styles.whotofollowname}`}>
-                    Manuel Perera
-                  </div>
-                  <div className={`${styles.whotofollowauthorslug}`}>
-                    @mperera
-                  </div>
-                </div>
-                <div className={`${styles.whotofollowbutton}`}>
-                  Follow
-                </div>
-              </div>
-            </div>
+    <div className={`${styles.rightSidebarContainer}`}>
+      <div className={`${styles.rightSidebar}`}>
+        <SideBarSection heading="Trends for you">
+          <TrendsBlock country="Germany" name="#iPhone12" quantity="155k" />
+          <TrendsBlock country="Germany" name="#AmazonPrimeDay" />
+          <TrendsBlock country="Uruguay" name="#autos" quantity="2,800" />
+        </SideBarSection>
 
-            <div className={`${styles.whotofollowblock}`}>
-              <img
-                className={`${styles.whotofollowlogo}`}
-                src=""
-                alt=""
-              />
-              <div className={`${styles.whotofollowcontent}`}>
-                <div>
-                  <div className={`${styles.whotofollowname}`}>
-                    Guillermo Galain
-                  </div>
-                  <div className={`${styles.whotofollowauthorslug}`}>
-                    @ggalain
-                  </div>
-                </div>
-                <div className={`${styles.whotofollowbutton}`}>
-                  Follow
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-  )
-}
+        <SideBarSection heading="Who to follow">
+          <WhoToFollowBlock name="Pablo Méndez" userName="pmendez" />
+          <WhoToFollowBlock name="Manuel Perera" userName="mperera" />
+          <WhoToFollowBlock name="Guillermo Galain" userName="ggalain" />
+        </SideBarSection>
+      </div>
+    </div>
+  );
+};

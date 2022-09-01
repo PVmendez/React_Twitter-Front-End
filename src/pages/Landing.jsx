@@ -1,11 +1,7 @@
 import CreateTweet from "../components/CreateTweet";
 
 function Landing() {
-  return (
-    <>
-      <CreateTweet></CreateTweet>
-    </>
-  );
+  return <></>;
 }
 
 export default Landing;

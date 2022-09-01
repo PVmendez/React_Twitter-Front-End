@@ -1,0 +1,10 @@
+.section {
+  min-height: 100vh
+}
+
+.header {
+  background-image: url("/public/chayanneBg.jpg");
+  height: 200px;
+}
+
+

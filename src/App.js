@@ -5,17 +5,18 @@ import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
-import Tweet from "./pages/Tweet";
+import Tweet from "./components/Tweet";
 
 function App() {
 	return (
 		<Routes>
-			<Route path="/" element={<Landing />} />
+			<Route path="/" element={<Tweet />} />
+			{/* <Route path="/" element={<Landing />} />
 			<Route path="/home" element={<Home />} />
 			<Route path="/login" element={<Login />} />
 			<Route path="/register" element={<Register />} />
 			<Route path="/:userName" element={<Profile />} />
-			<Route path="/tweet/:tweetId" element={<Tweet />} />
+			<Route path="/tweet/:tweetId" element={<SingleTweet />} /> */}
 		</Routes>
 	);
 }

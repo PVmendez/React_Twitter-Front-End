@@ -1,5 +1,3 @@
-import CreateTweet from "../components/CreateTweet";
-
 function Landing() {
   return <></>;
 }

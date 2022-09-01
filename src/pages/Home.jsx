@@ -1,5 +1,6 @@
 import { LeftSidebar } from "../components/LeftSidebar"
 import { RightSidebar } from "../components/RightSidebar";
+import CreateTweet from "../components/CreateTweet";
 import styles from "./Home.module.css";
 
 export const Home = () => {
@@ -7,6 +8,7 @@ export const Home = () => {
     <>
       <div className={`${styles.layout}`}>
         <LeftSidebar />
+        <CreateTweet />
         <RightSidebar />
       </div>
     </>

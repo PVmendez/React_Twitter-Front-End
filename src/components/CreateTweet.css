@@ -4,10 +4,15 @@
 }
 
 textarea {
-  resize: none;
-  border: none;
+  resize: none !important;
+  border: none !important;
 }
 
 .form-footer svg {
   width: 1.125rem;
+}
+
+.btn-primary {
+  background-color: #1d9bf0;
+  color: white;
 }

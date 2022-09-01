@@ -1,16 +1,20 @@
-import { LeftSidebar } from "../components/LeftSidebar"
+import { LeftSidebar } from "../components/LeftSidebar";
 import { RightSidebar } from "../components/RightSidebar";
 import CreateTweet from "../components/CreateTweet";
 import styles from "./Home.module.css";
+import Tweet from "../components/Tweet";
 
 export const Home = () => {
   return (
     <>
       <div className={`${styles.layout}`}>
         <LeftSidebar />
-        <CreateTweet />
+        <div className="border-start border-end">
+          <CreateTweet />
+          <Tweet></Tweet>
+        </div>
         <RightSidebar />
       </div>
     </>
-  )
-}
+  );
+};

@@ -7,12 +7,12 @@ function Tweet() {
     <>
       <article className="tweet p-3 d-flex border-bottom">
         <Avatar />
-
         <div className="flex-fill">
           <div className="d-flex justify-content-between align-items-center">
-            <a href="#urlvaaca" className="fs-7 fw-bold m-0 text-black">
-              <span className="hover-underline"></span>
-              <span className="fw-normal text-secondary ms-1">1m</span>
+            <a href="/none" class="fs-7 fw-bold m-0 text-black text-decoration-none">
+              <span class="hover-underline">Ibai Llanos</span>
+              <span class="fw-normal text-secondary ms-1">@ibai&middot;</span>
+              <span class="fw-normal text-secondary ms-1 hover-underline">1m</span>
             </a>
 
             <div className="dropdown">
@@ -88,6 +88,7 @@ function Tweet() {
                     </g>
                   </svg>
                 </div>
+                <span className="likes-count">53</span>
               </a>
             ) : (
               <a className="btn-like d-inline-flex align-items-center fs-7 " href="hrefPrueba">
@@ -98,10 +99,9 @@ function Tweet() {
                     </g>
                   </svg>
                 </div>
+                <span className="likes-count">53</span>
               </a>
             )}
-
-            <span className="likes-count">53</span>
 
             {/* SHARE */}
             <a href="hrefPrueba" className="btn-soft d-inline-flex align-items-center fs-7">

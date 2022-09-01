@@ -1,16 +1,10 @@
 import "./CreateTweet.css";
-
+import Avatar from "./Avatar";
 function CreateTweet() {
   return (
     <>
       <div className="tweet-form px-3 pt-2 pb-3 d-flex border-bottom">
-        <div className="me-2 flex-shrink-0">
-          <img
-            src="avatar.png"
-            alt="No avatar"
-            className="img-fluid user-image"
-          />
-        </div>
+        <Avatar></Avatar>
         <div className="flex-fill overflow-auto">
           <div className="tweet-content overflow-auto">
             <div id="new-tweet-content">
@@ -22,6 +16,7 @@ function CreateTweet() {
                 spellCheck="false"
                 placeholder="What's happening?"
                 maxLength="140"
+                resize="none"
               ></textarea>
             </div>
           </div>

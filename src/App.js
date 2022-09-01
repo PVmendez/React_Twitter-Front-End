@@ -5,7 +5,7 @@ import Landing from "./pages/Landing";
 import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
 import { Profile } from "./pages/Profile";
-import SingleTweet from "./pages/SingleTweet";
+import {SingleTweet} from "./pages/SingleTweet";
 
 function App() {
   return (

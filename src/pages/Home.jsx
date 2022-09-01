@@ -1,7 +1,7 @@
 import { LeftSidebar } from "../components/LeftSidebar";
 import { RightSidebar } from "../components/RightSidebar";
 import CreateTweet from "../components/CreateTweet";
-import styles from "./Home.module.css";
+import styles from "./Layout.module.css";
 import Tweet from "../components/Tweet";
 
 export const Home = () => {

@@ -1,0 +1,38 @@
+.brand {
+  height: 28px;
+  filter: invert(46%) sepia(99%) saturate(1449%) hue-rotate(176deg) brightness(100%) contrast(91%);
+  padding: 10px;
+}
+
+.sidebarmenu {
+  position: fixed;
+}
+
+.sidebarmenuitem {
+  font-size: 19px;
+  color: #0F141A;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.sidebarmenuitem:hover {
+  background: rgba(29, 161, 242, 0.1);
+  color: #1da0f2;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.sidebarmenuitemactive {
+  color: #1da0f2;
+}
+
+.sidebarmenuitemicon {
+  height: 26px;
+  margin-right: 20px;
+}
+
+.sidebarmenuitemactive .sidebarmenuitemicon {
+  filter: invert(67%) sepia(60%) saturate(4956%) hue-rotate(176deg) brightness(95%) contrast(99%);
+}

@@ -1,3 +1,6 @@
+import UserNameInput from "../components/UserNameInput";
+import UserPasswordInput from "../components/UserPasswordInput";
+
 function Login() {
   return (
     <>
@@ -9,32 +12,8 @@ function Login() {
             </a>
             <h2 className="text-white mb-4">Iniciar sesión</h2>
             <form action="/login" method="POST">
-              <div className="form-floating mb-3">
-                <input
-                  type="text"
-                  className="form-control bg-black"
-                  id="username"
-                  name="username"
-                  placeholder="name@example.com"
-                  required
-                />
-                <label className="text-white" for="username">
-                  Nombre de usuario
-                </label>
-              </div>
-              <div className="form-floating">
-                <input
-                  type="password"
-                  className="form-control bg-black text-white"
-                  id="password"
-                  name="password"
-                  placeholder="Password"
-                  required
-                />
-                <label className="text-white" for="password">
-                  Contraseña
-                </label>
-              </div>
+              <UserNameInput />
+              <UserPasswordInput />
               <div className="d-flex justify-content-center">
                 <button type="submit" className="mt-4 btn bg-primary text-white">
                   Entrar

@@ -16,7 +16,7 @@ export const LeftSidebar = () => {
         <SideBarMenuItem icon={"profile"} text={"Profile"} />
         <SideBarMenuItem icon={"more"} text={"More"} />
         <TwittButton />
-        <UserInfo />
+        {/* <UserInfo /> */}
       </div>
     </div>
   );

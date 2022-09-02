@@ -2,15 +2,28 @@ import Layout from "../components/Layout";
 import Header from "../components/Header";
 import UserInfo from "../components/UserInfo";
 import styles from "./css/SingleTweet.module.css";
+import { callBackEnd } from "../apiHandler";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 function SingleTweet() {
+  const [tweet, setTweet] = useState([]);
+  const params = useParams();
+
+  useEffect(() => {
+    const getTweet = async () => {
+      setTweet(await callBackEnd("tweets/631223cb431ae89ba7349c7b"));
+    };
+    getTweet();
+  }, []);
   return (
     <Layout>
       <Header title={"Tweet"} />
       <div className={`${styles.tweetContainer}`}>
         <div>
-          <UserInfo />
-          <div className={`${styles.tweetContent}`}>tweeeeeeeeeet</div>
-          <div className={`${styles.tweetDate}`}>4:31 p. m. · 31 jul. 2021·Twitter for Android</div>
+          <UserInfo user={tweet.author} />
+          <div className={`${styles.tweetContent}`}>{tweet.content}</div>
+          <div className={`${styles.tweetDate}`}>{tweet.date}</div>
         </div>
         <hr />
         <div>

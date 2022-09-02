@@ -5,7 +5,7 @@ function WhoToFollowBlock(props) {
     <>
       <div className={`${styles.whotofollowblock}`}>
         <div className={`${styles.whotofollowcontent}`}>
-          <UserInfo />
+          {/* <UserInfo /> */}
           <div className={`${styles.whotofollowbutton}`}>Follow</div>
         </div>
       </div>

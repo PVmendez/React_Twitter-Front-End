@@ -1,40 +1,23 @@
-import React from "react"
-import styles from "./LeftSidebar.module.css";
+import React from "react";
+import styles from "./css/LeftSidebar.module.css";
+import TwittButton from "./TwittButton";
+import SideBarMenuItem from "./SideBarMenuItem";
+import UserInfo from "./UserInfo";
 
 export const LeftSidebar = () => {
   return (
     <div>
-        <img src="twitter" className={`${styles.brand}`} alt="" />
-        <div className={`${styles.sidebarmenu}`}>
-          <div className={`${styles.sidebarmenuitem} ${styles.sidebarmenuitemactive}`}>
-            <img src="home.svg" className={`${styles.sidebarmenuitemicon}`} alt=""/>
-            Home
-          </div>
-          <div className={`${styles.sidebarmenuitem}`}>
-            <img src="explore.svg" className={`${styles.sidebarmenuitemicon}`} alt=""/>
-            Explore
-          </div>
-
-          <div className={`${styles.sidebarmenuitem}`}>
-            <img src="notifications.svg" className={`${styles.sidebarmenuitemicon}`} alt=""/>
-            Notifications
-          </div>
-
-          <div className={`${styles.sidebarmenuitem}`}>
-            <img src="messages.svg" className={`${styles.sidebarmenuitemicon}`} alt=""/>
-            Messages
-          </div>
-
-          <div className={`${styles.sidebarmenuitem}`}>
-            <img src="profile.svg" className={`${styles.sidebarmenuitemicon}`} alt=""/>
-            Profile
-          </div>
-
-          <div className={`${styles.sidebarmenuitem}`}>
-            <img src="more.svg" className={`${styles.sidebarmenuitemicon}`} alt=""/>
-            More
-          </div>
-        </div>
+      <div className={`${styles.sidebarmenu}`}>
+        <img src="/twitter.svg" className={`${styles.brand}`} alt="" />
+        <SideBarMenuItem icon={"home"} text={"Home"} />
+        <SideBarMenuItem icon={"explore"} text={"Explore"} />
+        <SideBarMenuItem icon={"notifications"} text={"Notifications"} />
+        <SideBarMenuItem icon={"messages"} text={"Messages"} />
+        <SideBarMenuItem icon={"profile"} text={"Profile"} />
+        <SideBarMenuItem icon={"more"} text={"More"} />
+        <TwittButton />
+        {/* <UserInfo /> */}
       </div>
-  )
-}
+    </div>
+  );
+};

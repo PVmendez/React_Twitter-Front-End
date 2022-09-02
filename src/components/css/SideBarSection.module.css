@@ -1,0 +1,12 @@
+.sideBarSection {
+  background: #f5f8fa;
+  border-radius: 15px;
+  margin-top: 1em;
+}
+
+.sideBarSectionHeading {
+  font-size: 19px;
+  font-weight: bold;
+  color: #14171a;
+  padding: 10px 15px;
+}

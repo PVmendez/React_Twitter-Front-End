@@ -280,7 +280,7 @@ input:focus-visible + svg {
 }
 
 input {
-  padding: 3rem 2.5rem;
+  /* padding: 3rem 2.5rem; */
   border: 1px solid var(--bs-light);
   background-color: var(--bs-light);
 }

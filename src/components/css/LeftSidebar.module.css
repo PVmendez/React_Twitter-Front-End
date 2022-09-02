@@ -1,0 +1,26 @@
+.brand {
+  height: 50px;
+  filter: invert(46%) sepia(99%) saturate(1449%) hue-rotate(176deg) brightness(100%) contrast(91%);
+  padding: 10px;
+}
+
+.sidebarmenu {
+  position: fixed;
+}
+
+.sidebarmenu button {
+  margin-top: 2em;
+}
+
+.userOptions {
+  display: flex;
+  width: 100%;
+  border-radius: 90px;
+  padding: 0.4em 0.7em;
+  transition: 0.1s ease-in-out;
+  margin-top: 15em;
+}
+
+.userOptions:hover {
+  background-color: rgb(240, 240, 240);
+}

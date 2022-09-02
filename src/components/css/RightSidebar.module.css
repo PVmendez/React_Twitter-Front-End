@@ -1,0 +1,9 @@
+.rightSidebarContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.rightSidebar {
+  position: fixed;
+  margin: 1em;
+}

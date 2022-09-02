@@ -2,11 +2,11 @@ import Avatar from "./Avatar";
 import { Link } from "react-router-dom";
 const likes = true;
 
-function Tweet() {
+function Tweet({ tweet }) {
   return (
     <>
       <article className="tweet p-3 d-flex border-bottom">
-        <Avatar />
+        <Avatar user={tweet.author} />
         <div className="flex-fill">
           <div className="d-flex justify-content-between align-items-center">
             <Link to="/none" className="fs-7 fw-bold m-0 text-black text-decoration-none">
@@ -44,12 +44,7 @@ function Tweet() {
               </div>
             </div>
           </div>
-          <p className="fs-7 my-0">
-            orem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ante velit, sollicitudin
-            ut mattis quis, rutrum et lacus. Donec pellentesque enim Link magna congue, in mollis
-            turpis euismod. Pellentesque at mi sed sapien semper convallis nec nec nibh. Etiam et
-            ligula et nulla rutrum luctus.
-          </p>
+          <p className="fs-7 my-0">{tweet.content}</p>
           <div className="d-flex align-items-center justify-content-between tweet-actions">
             {/* COMMENT */}
             <Link to="#hrefcambiar" className="btn-soft d-inline-flex align-items-center fs-7">

@@ -1,0 +1,15 @@
+.tweetContainer {
+  padding: 1em;
+}
+
+.tweetContent {
+  margin-top: 1em;
+}
+
+.tweetDate {
+  margin-top: 0.7em;
+}
+
+.tweetStadistics {
+  font-size: 0.8em;
+}

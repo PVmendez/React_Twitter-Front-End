@@ -1,8 +1,10 @@
-function Avatar() {
+function Avatar({user}) {
+  console.log(user)
   return (
+    
     <div className="me-3 flex-shrink-0">
       <img
-        src="https://pbs.twimg.com/profile_images/1540810647604183046/OhYhwdAi_400x400.jpg"
+        src={user.photo}
         alt="profilePhoto"
         className="img-fluid user-image"
       ></img>

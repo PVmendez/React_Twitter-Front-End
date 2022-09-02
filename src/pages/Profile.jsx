@@ -5,11 +5,22 @@ import stylesLayout from "./Layout.module.css";
 import styles from "./Profile.module.css";
 import { useParams, Link } from "react-router-dom";
 import Avatar from "../components/Avatar";
+import { TweetsOptions } from "../components/TweetsOptions";
 
 export const Profile = () => {
   const params = useParams();
   const nameAuth = "Chayanne";
   const tweetList = 1;
+  const user = [
+    {
+      id: 1,
+      name: "Jorge Bazalto",
+      username: "jorgeBazalto",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dignissimos repudiandae ab non neque aliquam distinctio sunt voluptate nostrum! Aliquam a dicta saepe voluptatibus neque, omnis aut aliquid ullam earum.",
+      photo: "https://pbs.twimg.com/profile_images/1540810647604183046/OhYhwdAi_400x400.jpg",
+    },
+  ];
+
   return (
     <>
       <div className={`${stylesLayout.layout}`}>
@@ -33,9 +44,10 @@ export const Profile = () => {
               >
                 <div className="d-flex flex-column justify-content-center">
                   <div className="mb-3">
-                    <Avatar />
+                  
+                    <Avatar photo={user.photo}/>
                   </div>
-                    
+
                   <h2 className="fw-bolder fs-6">Elmer Figueroa Arce</h2>
                   <p className="text-muted m-0 fs-7">@Chayanne</p>
                   <p className="my-1 fs-7">
@@ -83,39 +95,10 @@ export const Profile = () => {
                 </div>
               </div>
               <div className="d-flex" id="profile-nav">
-                <Link
-                  to=""
-                  className="flex-grow-1 btn-gray btn rounded-0 fs-7 fw-600 py-3 text-secondary"
-                >
-                  Tweets
-                </Link>
-                <Link
-                  to=""
-                  className="flex-grow-1 btn-gray btn rounded-0 fs-7 fw-600 py-3 text-secondary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#EditModal"
-                >
-                  <svg viewBox="0 0 24 24" className="d-xl-none"></svg>
-                  <span className="mx-2 d-none d-xl-inline">Tweets & replies</span>
-                </Link>
-                <Link
-                  to=""
-                  className="flex-grow-1 btn-gray btn rounded-0 fs-7 fw-600 py-3 text-secondary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#EditModal"
-                >
-                  <svg viewBox="0 0 24 24" className="d-xl-none"></svg>
-                  <span className="mx-2 d-none d-xl-inline">Media</span>
-                </Link>
-                <Link
-                  to=""
-                  className="flex-grow-1 btn-gray btn rounded-0 fs-7 fw-600 py-3 text-secondary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#EditModal"
-                >
-                  <svg viewBox="0 0 24 24" className="d-xl-none"></svg>
-                  <span className="mx-2 d-none d-xl-inline">Likes</span>
-                </Link>
+                <TweetsOptions option="Tweets" />
+                <TweetsOptions option="Tweets & replies" />
+                <TweetsOptions option="Media" />
+                <TweetsOptions option="Likes" />
               </div>
               <div id="tweets-section">{tweetList > 0 ? <Tweet /> : <div>No hay tweets</div>}</div>
             </section>

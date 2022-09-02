@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import UserNameInput from "../components/UserNameInput";
 import UserPasswordInput from "../components/UserPasswordInput";
 

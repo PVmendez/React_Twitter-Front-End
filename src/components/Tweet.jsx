@@ -1,4 +1,5 @@
 import Avatar from "./Avatar";
+import { Link } from "react-router-dom";
 const likes = true;
 
 function Tweet({ tweet }) {
@@ -8,20 +9,17 @@ function Tweet({ tweet }) {
         <Avatar user={tweet.author} />
         <div className="flex-fill">
           <div className="d-flex justify-content-between align-items-center">
-            <a href="/none" className="fs-7 fw-bold m-0 text-black text-decoration-none">
-              <span className="hover-underline">
-                {tweet.author.firstName + " " + tweet.author.lastName}
-              </span>
-              <span className="fw-normal text-secondary ms-1">
-                @{tweet.author.userName}&middot;
-              </span>
+
+            <Link to="/none" className="fs-7 fw-bold m-0 text-black text-decoration-none">
+              <span className="hover-underline">Ibai Llanos</span>
+              <span className="fw-normal text-secondary ms-1">@ibai&middot;</span>
               <span className="fw-normal text-secondary ms-1 hover-underline">1m</span>
-            </a>
+            </Link>
 
             <div className="dropdown">
-              <a
+              <Link
                 className="btn-soft rounded-circle d-inline-flex justify-content-center align-items-center p-1"
-                href="cambiarHref"
+                to="cambiarHref"
               >
                 <svg viewBox="0 0 24 24">
                   <g>
@@ -30,7 +28,7 @@ function Tweet({ tweet }) {
                     <circle cx="19" cy="12" r="2"></circle>
                   </g>
                 </svg>
-              </a>
+              </Link>
 
               <div className="dropdown-menu dropdown-menu-end rounded-3 shadow bg-white border-0">
                 <form>
@@ -50,7 +48,7 @@ function Tweet({ tweet }) {
           <p className="fs-7 my-0">{tweet.content}</p>
           <div className="d-flex align-items-center justify-content-between tweet-actions">
             {/* COMMENT */}
-            <a href="#hrefcambiar" className="btn-soft d-inline-flex align-items-center fs-7">
+            <Link to="#hrefcambiar" className="btn-soft d-inline-flex align-items-center fs-7">
               <div className="rounded-circle p-2 d-inline-flex justify-content-center align-items-center me-lg-1">
                 <svg viewBox="0 0 24 24">
                   <g>
@@ -59,10 +57,10 @@ function Tweet({ tweet }) {
                 </svg>
               </div>
               <span>5</span>
-            </a>
+            </Link>
 
             {/* RETWEET */}
-            <a href="#hrefcambiar" className="btn-retweet d-inline-flex align-items-center fs-7">
+            <Link to="#hrefcambiar" className="btn-retweet d-inline-flex align-items-center fs-7">
               <div className="rounded-circle p-2 d-inline-flex justify-content-center align-items-center me-lg-1">
                 <svg viewBox="0 0 24 24">
                   <g>
@@ -71,13 +69,13 @@ function Tweet({ tweet }) {
                 </svg>
               </div>
               <span>4</span>
-            </a>
+            </Link>
             {/* LIKES */}
 
             {likes ? (
-              <a
+              <Link
                 className="btn-like liked d-inline-flex align-items-center fs-7 "
-                href="hrefPrueba"
+                to="hrefPrueba"
               >
                 <div className="rounded-circle p-2 d-inline-flex justify-content-center align-items-center me-lg-1">
                   <svg viewBox="0 0 24 24">
@@ -87,9 +85,9 @@ function Tweet({ tweet }) {
                   </svg>
                 </div>
                 <span className="likes-count">53</span>
-              </a>
+              </Link>
             ) : (
-              <a className="btn-like d-inline-flex align-items-center fs-7 " href="hrefPrueba">
+              <Link className="btn-like d-inline-flex align-items-center fs-7 " to="hrefPrueba">
                 <div className="rounded-circle p-2 d-inline-flex justify-content-center align-items-center me-lg-1">
                   <svg viewBox="0 0 24 24">
                     <g>
@@ -98,11 +96,11 @@ function Tweet({ tweet }) {
                   </svg>
                 </div>
                 <span className="likes-count">53</span>
-              </a>
+              </Link>
             )}
 
             {/* SHARE */}
-            <a href="hrefPrueba" className="btn-soft d-inline-flex align-items-center fs-7">
+            <Link to="hrefPrueba" className="btn-soft d-inline-flex align-items-center fs-7">
               <div className="rounded-circle p-2 d-inline-flex justify-content-center align-items-center me-lg-1">
                 <svg viewBox="0 0 24 24">
                   <g>
@@ -111,7 +109,7 @@ function Tweet({ tweet }) {
                   </g>
                 </svg>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </article>

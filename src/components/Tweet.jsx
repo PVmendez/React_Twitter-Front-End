@@ -10,8 +10,12 @@ function Tweet({ tweet }) {
         <div className="flex-fill">
           <div className="d-flex justify-content-between align-items-center">
             <Link to="/none" className="fs-7 fw-bold m-0 text-black text-decoration-none">
-              <span className="hover-underline">Ibai Llanos</span>
-              <span className="fw-normal text-secondary ms-1">@ibai&middot;</span>
+              <span className="hover-underline">
+                {tweet.author.firstName + " " + tweet.author.lastName}
+              </span>
+              <span className="fw-normal text-secondary ms-1">
+                @{tweet.author.userName}&middot;
+              </span>
               <span className="fw-normal text-secondary ms-1 hover-underline">1m</span>
             </Link>
 

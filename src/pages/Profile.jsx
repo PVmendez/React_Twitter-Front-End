@@ -32,10 +32,8 @@ export const Profile = () => {
                 className={`d-flex justify-content-between align-content-start p-3 position-relative border-bottom ${styles.profileinfo}`}
               >
                 <div className="d-flex flex-column justify-content-center">
-                  <div className="mb-3">
-                    <Avatar />
-                  </div>
-                    
+                  <div className="mb-3">{/* <Avatar /> */}</div>
+
                   <h2 className="fw-bolder fs-6">Elmer Figueroa Arce</h2>
                   <p className="text-muted m-0 fs-7">@Chayanne</p>
                   <p className="my-1 fs-7">
@@ -117,7 +115,7 @@ export const Profile = () => {
                   <span className="mx-2 d-none d-xl-inline">Likes</span>
                 </Link>
               </div>
-              <div id="tweets-section">{tweetList > 0 ? <Tweet /> : <div>No hay tweets</div>}</div>
+              {/* <div id="tweets-section">{tweetList > 0 ? <Tweet /> : <div>No hay tweets</div>}</div> */}
             </section>
           </main>
         </div>

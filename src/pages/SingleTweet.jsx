@@ -84,3 +84,7 @@ function SingleTweet() {
 }
 
 export default SingleTweet;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9e8612a8169853089558e1da7ecb9c82155e5d3d

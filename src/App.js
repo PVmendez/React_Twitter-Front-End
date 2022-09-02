@@ -5,7 +5,8 @@ import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { Profile } from "./pages/Profile";
-import SingleTweet from "./pages/SingleTweet";
+import { SingleTweet } from "./pages/SingleTweet";
+import { Followers } from "./pages/Followers";
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
       <Route path="/home" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/:userName" element={<Profile />} />
+      <Route path="/user/:userName" element={<Profile />} />
       <Route path="/tweet/:tweetId" element={<SingleTweet />} />
+      <Route path="/user/:userName/followers" element={<Followers />} />
     </Routes>
   );
 }

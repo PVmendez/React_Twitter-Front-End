@@ -3,10 +3,4 @@
   grid-template-columns: 275px auto 350px;
   margin: 0 auto;
   max-width: 1200px;
-  height: 100vh;
-}
-
-.layoutBody {
-  border-right: 1px solid #dee2e6;
-  border-left: 1px solid #dee2e6;
 }

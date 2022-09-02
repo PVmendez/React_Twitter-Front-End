@@ -1,3 +1,6 @@
+import UserNameInput from "../components/UserNameInput";
+import UserPasswordInput from "../components/UserPasswordInput";
+
 function Register() {
   return (
     <>
@@ -10,19 +13,7 @@ function Register() {
               </a>
               <h2 className="text-white">Crea tu cuenta</h2>
               <p className="text-primary">Paso 1 de 3 - Información de registro</p>
-              <div className="form-floating mb-3">
-                <input
-                  type="text"
-                  className="form-control bg-black"
-                  id="username"
-                  name="username"
-                  placeholder="name@example.com"
-                  required
-                />
-                <label className="text-white" for="username">
-                  * Nombre de usuario
-                </label>
-              </div>
+              <UserNameInput />
               <div className="form-floating mb-3">
                 <input
                   type="email"
@@ -36,19 +27,7 @@ function Register() {
                   * Correo electrónico
                 </label>
               </div>
-              <div className="form-floating mb-3">
-                <input
-                  type="password"
-                  className="form-control bg-black"
-                  id="password"
-                  name="password"
-                  placeholder="Password"
-                  required
-                />
-                <label className="text-white" for="password">
-                  * Contraseña
-                </label>
-              </div>
+              <UserPasswordInput />
             </div>
             <div>
               <p className="text-primary">Paso 2 de 3 - Datos personales</p>

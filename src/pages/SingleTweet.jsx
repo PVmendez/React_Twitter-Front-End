@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import Header from "../components/Header";
 import UserInfo from "../components/UserInfo";
 import styles from "./css/SingleTweet.module.css";
-import { callBackEnd } from "../apiHandler";
+import { getApi } from "../apiHandler";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -12,10 +12,11 @@ function SingleTweet() {
 
   useEffect(() => {
     const getTweet = async () => {
-      setTweet(await callBackEnd("tweets/631223cb431ae89ba7349c7b"));
+      setTweet(await getApi("tweets/631223cb431ae89ba7349c7b"));
     };
     getTweet();
   }, []);
+
   return (
     <Layout>
       <Header title={"Tweet"} />
@@ -84,7 +85,3 @@ function SingleTweet() {
 }
 
 export default SingleTweet;
-<<<<<<< HEAD
-=======
-
->>>>>>> 9e8612a8169853089558e1da7ecb9c82155e5d3d

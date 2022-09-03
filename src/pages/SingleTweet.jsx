@@ -12,7 +12,7 @@ function SingleTweet() {
 
   useEffect(() => {
     const getTweet = async () => {
-      setTweet(await getApi("tweets/631223cb431ae89ba7349c7b"));
+      setTweet(await getApi(`tweets/${params.tweetId}`));
     };
     getTweet();
   }, []);

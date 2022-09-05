@@ -3,17 +3,27 @@ import Tweet from "../components/Tweet";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
 import { getApi } from "../apiHandler";
+import { CallBackEnd } from "../apiHandler";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 export const Home = () => {
+  const { token } = useSelector((state) => state.token);
   const [tweets, setTweets] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     const getAllTweets = async () => {
-      setTweets(await getApi("tweets"));
+      setTweets(await CallBackEnd("tweets", token));
+      setIsLoading(false);
     };
     getAllTweets();
-  }, []);
+  }, [token]);
+
+  if (isLoading) {
+    return <>Está cargando</>
+  }
 
   return (
     <>

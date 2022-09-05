@@ -1,4 +1,4 @@
-function UserNameInput() {
+function UserNameInput({inputHandle, datos}) {
   return (
     <div className="form-floating mb-3">
       <input
@@ -8,8 +8,10 @@ function UserNameInput() {
         name="username"
         placeholder="name@example.com"
         required
+        onChange={inputHandle}
+        value={datos.username}
       />
-      <label className="text-white" for="username">
+      <label className="text-white" htmlFor="username">
         * Nombre de usuario
       </label>
     </div>

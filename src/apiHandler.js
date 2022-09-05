@@ -16,3 +16,14 @@ export const patchApi = async (endpoint) => {
   const response = await axios.patch(url + endpoint);
   return response.data;
 };
+
+export const CallBackEnd = async (endpoint, token) => {
+  const response = await axios({
+    method: "GET",
+    url: url + endpoint,
+    headers: {
+      'Authorization': `Bearer ${token}`,
+    } 
+  },);
+  return response.data;
+};

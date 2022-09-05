@@ -22,24 +22,31 @@ function Login() {
   };
 
   const loginHandle = async (e) => {
-    e.preventDefault();
-    if (e.target.value === "") {
-      return console.log("no enviar");
+    
+    try {
+      e.preventDefault();
+      if (e.target.value === "") {
+        return console.log("no enviar");
+      }
+      let response = await axios({
+        method: "POST",
+        url: "http://localhost:8000/login",
+        data: datos,
+      });
+      dispatch(addToken(response.data.datos.token));
+      dispatch(addUser(response.data.datos._doc));
+      navigate("/home")
+    } catch (error) {
+      console.log(error)
     }
-    let response = await axios({
-      method: "POST",
-      url: "http://localhost:8000/login",
-      data: datos,
-    });
-    console.log(response);
-    dispatch(addUser(response.data.datos._doc));
-    dispatch(addToken(response.data.datos.token));
+    
+    
   };
 
   return (
     <>
-      <div className="landing-bg d-flex align-items-center vh-100 landingImage">
-        <div className="container w-50 rounded-3 bg-black p-5 shadow-lg ">
+      <div className="landing-bg d-flex align-items-center vh-100">
+        <div className="container w-50 rounded-3 bg-black p-5 shadow-lg">
           <div>
             <a className="text-decoration-none" href="/">
               Volver

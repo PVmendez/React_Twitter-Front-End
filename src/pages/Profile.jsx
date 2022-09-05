@@ -12,7 +12,7 @@ import { CallBackEnd } from "../apiHandler";
 import { useSelector } from "react-redux";
 
 export const Profile = () => {
-  const { token } = useSelector((state) => state.token);
+  const { token } = useSelector((state) => state);
   const params = useParams();
   const [user, setUser] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

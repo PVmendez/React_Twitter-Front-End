@@ -9,7 +9,7 @@ const persistConfig = {
   storage,
 }
 
-const persistedReducer = persistReducer(persistConfig, tokenSlice.reducer, userSlice.reducer,);
+const persistedReducer = persistReducer(persistConfig, tokenSlice.reducer, userSlice.reducer);
 
 export const store = configureStore({
   reducer: {

@@ -19,7 +19,7 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/:userName" element={<Profile />} />
       <Route path="/tweet/:tweetId" element={<SingleTweet />} />
-			<Route path="/user/:userName/followers" element={<Followers/>} />
+      <Route path="/user/:userName/followers" element={<Followers />} />
     </Routes>
   );
 }

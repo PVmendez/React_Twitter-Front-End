@@ -2,6 +2,7 @@ import CreateTweet from "../components/CreateTweet";
 import Tweet from "../components/Tweet";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
+import { getApi } from "../apiHandler";
 import { CallBackEnd } from "../apiHandler";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -29,8 +30,9 @@ export const Home = () => {
       <Layout>
         <Header title={"Home"}></Header>
         <CreateTweet />
-        {tweets.map((tweet, key) => <Tweet tweet={tweet} key={key} />
-        )}
+        {tweets.map((tweet, key) => (
+          <Tweet tweet={tweet} key={key} />
+        ))}
       </Layout>
     </>
   );

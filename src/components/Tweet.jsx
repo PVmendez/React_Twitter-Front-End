@@ -1,7 +1,7 @@
 import Avatar from "./Avatar";
 import { Link } from "react-router-dom";
 import "./css/Tweet.css";
-const likes = true;
+const likes = false;
 
 function Tweet({ tweet }) {
   return (

@@ -7,9 +7,11 @@ import stylesLayout from "./Layout.module.css";
 import styles from "./Profile.module.css";
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { callBackEnd } from "../apiHandler";
+import { CallBackEnd } from "../apiHandler";
+import { useSelector } from "react-redux";
 
 export const Profile = () => {
+  const { token } = useSelector((state) => state.token);
   const params = useParams();
   const [user, setUser] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -17,11 +19,11 @@ export const Profile = () => {
   useEffect(() => {
     setIsLoading(true);
     const getOneUser = async () => {
-      setUser(await callBackEnd("users/" + params.userName));
+      setUser(await CallBackEnd("users/" + params.userName, token));
       setIsLoading(false);
     };
     getOneUser();
-  }, [params.userName]);
+  }, [params.userName, token]);
 
   if (isLoading) {
     return <>Está cargando</>

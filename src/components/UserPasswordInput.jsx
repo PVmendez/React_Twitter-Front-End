@@ -1,4 +1,4 @@
-function UserPasswordInput() {
+function UserPasswordInput({inputHandle, datos}) {
   return (
     <div className="form-floating mb-3">
       <input
@@ -8,8 +8,10 @@ function UserPasswordInput() {
         name="password"
         placeholder="Password"
         required
+        onChange={inputHandle}
+        value={datos.password}
       />
-      <label className="text-white" for="password">
+      <label className="text-white" htmlFor="password">
         * Contraseña
       </label>
     </div>

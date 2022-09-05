@@ -4,7 +4,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { add } from "../redux/Token/tokenSlice";
+import { addToken } from "../redux/Token/tokenSlice";
+import { addUser } from "../redux/User/userSlice";
 
 function Login() {
   const dispatch = useDispatch();
@@ -30,14 +31,10 @@ function Login() {
       url: "http://localhost:8000/login",
       data: datos,
     });
-    dispatch(add(response.data.datos.token));
+    console.log(response)
+    dispatch(addUser(response.data.datos._doc));
+    dispatch(addToken(response.data.datos.token));
   };
-
-  const apiCall = async () => {
-    const response = await axios({
-
-    })
-  }
 
   return (
     <>

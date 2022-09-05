@@ -4,7 +4,7 @@ function Landing() {
   return (
     <>
       <div className="row vh-100 m-0 ">
-        <div className="col-6 landing-bg" id="landingImage"></div>
+        <div className="col-6 landing-bg landingImage"></div>
         <div className="col-6 bg-black d-flex align-items-center">
           <div className="text-white ms-4">
             <h1>Bienvenido a Twitter</h1>

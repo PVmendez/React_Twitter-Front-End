@@ -38,8 +38,8 @@ function Login() {
 
   return (
     <>
-      <div className="landing-bg d-flex align-items-center vh-100">
-        <div className="container w-50 rounded-3 bg-black p-5 shadow-lg">
+      <div className="landing-bg d-flex align-items-center vh-100 landingImage">
+        <div className="container w-50 rounded-3 bg-black p-5 shadow-lg ">
           <div>
             <a className="text-decoration-none" href="/">
               Volver

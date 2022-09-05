@@ -30,14 +30,14 @@ function Register() {
       url: "http://localhost:8000/register",
       data: datos,
     });
-    console.log(datos)
+    console.log(datos);
 
     document.cookie = `token=${response.data.token}; max-age=${60 * 3}; path=/; samesite=strict`;
   };
   return (
     <>
-      <div className="landing-bg d-flex align-items-center h-100">
-        <div className="container w-50 rounded-3 bg-black p-5 shadow-lg my-5">
+      <div className="landing-bg d-flex align-items-center h-100 landingImage">
+        <div className="container w-50 rounded-3 bg-black p-5 shadow-lg my-5 ">
           <form onSubmit={registerHandle}>
             <div>
               <a className="text-decoration-none" href="/">
@@ -46,11 +46,11 @@ function Register() {
               <h2 className="text-white">Crea tu cuenta</h2>
               <p className="text-primary">Paso 1 de 3 - Información de registro</p>
               <UserNameInput inputHandle={inputHandle} datos={datos} />
-              
+
               <div className="form-floating mb-3">
                 <input
                   type="email"
-                  className="form-control bg-black"
+                  className="form-control bg-black text-white"
                   id="email"
                   name="email"
                   placeholder="name@example.com"
@@ -69,7 +69,7 @@ function Register() {
               <div className="form-floating mb-3">
                 <input
                   type="text"
-                  className="form-control bg-black"
+                  className="form-control bg-black text-white"
                   id="firstName"
                   name="firstName"
                   placeholder="name@example.com"
@@ -84,7 +84,7 @@ function Register() {
               <div className="form-floating mb-3">
                 <input
                   type="text"
-                  className="form-control bg-black"
+                  className="form-control bg-black text-white"
                   id="lastName"
                   name="lastName"
                   placeholder="name@example.com"
@@ -99,7 +99,7 @@ function Register() {
               <div className="form-floating mb-3">
                 <input
                   type="number"
-                  className="form-control bg-black"
+                  className="form-control bg-black text-white"
                   id="age"
                   name="age"
                   placeholder="name@example.com"
@@ -117,7 +117,7 @@ function Register() {
 
               <div className="form-floating">
                 <textarea
-                  className="form-control bg-black border border-white"
+                  className="form-control bg-black border border-white text-white"
                   placeholder="Leave a comment here"
                   id="description"
                   name="description"

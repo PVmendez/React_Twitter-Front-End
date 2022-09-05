@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToken } from "../redux/Token/tokenSlice";
 import { addUser } from "../redux/User/userSlice";
+import { Link } from "react-router-dom";
 
 function Login() {
   const dispatch = useDispatch();
@@ -23,17 +24,16 @@ function Login() {
 
   const loginHandle = async (e) => {
     e.preventDefault();
-    if (e.target.value === "") {
-      return console.log("no enviar");
-    }
-    let response = await axios({
-      method: "POST",
-      url: "http://localhost:8000/login",
-      data: datos,
-    });
-    console.log(response)
-    dispatch(addUser(response.data.datos._doc));
-    dispatch(addToken(response.data.datos.token));
+      if (e.target.value === "") {
+        return console.log("no enviar");
+      }
+      let response = await axios({
+        method: "POST",
+        url: "http://localhost:8000/login",
+        data: datos,
+      });
+      dispatch(addUser(response.data.datos._doc));
+      dispatch(addToken(response.data.datos.token));
   };
 
   return (
@@ -49,9 +49,11 @@ function Login() {
               <UserNameInput inputHandle={inputHandle} datos={datos} />
               <UserPasswordInput inputHandle={inputHandle} datos={datos} />
               <div className="d-flex justify-content-center">
-                <button type="submit" className="mt-4 btn bg-primary text-white">
-                  Entrar
-                </button>
+                <Link to="/home">
+                  <button type="submit" className="mt-4 btn bg-primary text-white">
+                    Entrar
+                  </button>
+                </Link>
               </div>
             </form>
           </div>

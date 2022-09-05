@@ -31,15 +31,15 @@ function Login() {
       url: "http://localhost:8000/login",
       data: datos,
     });
-    console.log(response)
+    console.log(response);
     dispatch(addUser(response.data.datos._doc));
     dispatch(addToken(response.data.datos.token));
   };
 
   return (
     <>
-      <div className="landing-bg d-flex align-items-center vh-100">
-        <div className="container w-50 rounded-3 bg-black p-5 shadow-lg">
+      <div className="landing-bg d-flex align-items-center vh-100 landingImage">
+        <div className="container w-50 rounded-3 bg-black p-5 shadow-lg ">
           <div>
             <a className="text-decoration-none" href="/">
               Volver

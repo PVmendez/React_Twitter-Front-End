@@ -1,9 +1,9 @@
-function UserNameInput({inputHandle, datos}) {
+function UserNameInput({ inputHandle, datos }) {
   return (
     <div className="form-floating mb-3">
       <input
         type="text"
-        className="form-control bg-black"
+        className="form-control bg-black text-white"
         id="username"
         name="username"
         placeholder="name@example.com"

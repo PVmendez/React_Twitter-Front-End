@@ -6,7 +6,7 @@ a {
   text-decoration: none;
 }
 
-#landingImage {
+.landingImage {
   background-image: url("https://i.imgur.com/ZJaex4l.png");
   background-repeat: no-repeat;
   background-size: cover;

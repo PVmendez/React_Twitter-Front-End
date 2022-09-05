@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import Header from "../components/Header";
 import UserInfo from "../components/UserInfo";
 import styles from "./css/SingleTweet.module.css";
-import { callBackEnd } from "../apiHandler";
+import { CallBackEnd } from "../apiHandler";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -12,7 +12,7 @@ function SingleTweet() {
 
   useEffect(() => {
     const getTweet = async () => {
-      setTweet(await callBackEnd("tweets/631223cb431ae89ba7349c7b"));
+      setTweet(await CallBackEnd("tweets/631223cb431ae89ba7349c7b"));
     };
     getTweet();
   }, []);

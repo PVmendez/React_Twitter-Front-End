@@ -10,7 +10,6 @@ import { Followers } from "./pages/Followers";
 
 
 function App() {
-	
 
   return (
     <Routes>

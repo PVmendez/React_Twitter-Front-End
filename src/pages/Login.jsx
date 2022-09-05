@@ -1,7 +1,44 @@
 import UserNameInput from "../components/UserNameInput";
 import UserPasswordInput from "../components/UserPasswordInput";
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { add } from "../redux/Token/tokenSlice";
 
 function Login() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [datos, setDatos] = useState({
+    username: "",
+    password: "",
+  });
+
+  const inputHandle = (e) => {
+    let { name, value } = e.target;
+    let newDatos = { ...datos, [name]: value };
+    setDatos(newDatos);
+  };
+
+  const loginHandle = async (e) => {
+    e.preventDefault();
+    if (e.target.value === "") {
+      return console.log("no enviar");
+    }
+    let response = await axios({
+      method: "POST",
+      url: "http://localhost:8000/login",
+      data: datos,
+    });
+    dispatch(add(response.data.datos.token));
+  };
+
+  const apiCall = async () => {
+    const response = await axios({
+
+    })
+  }
+
   return (
     <>
       <div className="landing-bg d-flex align-items-center vh-100">
@@ -11,9 +48,9 @@ function Login() {
               Volver
             </a>
             <h2 className="text-white mb-4">Iniciar sesión</h2>
-            <form action="/login" method="POST">
-              <UserNameInput />
-              <UserPasswordInput />
+            <form onSubmit={loginHandle}>
+              <UserNameInput inputHandle={inputHandle} datos={datos} />
+              <UserPasswordInput inputHandle={inputHandle} datos={datos} />
               <div className="d-flex justify-content-center">
                 <button type="submit" className="mt-4 btn bg-primary text-white">
                   Entrar

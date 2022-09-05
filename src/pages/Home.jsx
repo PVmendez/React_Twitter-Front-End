@@ -2,7 +2,6 @@ import CreateTweet from "../components/CreateTweet";
 import Tweet from "../components/Tweet";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
-import { getApi } from "../apiHandler";
 import { CallBackEnd } from "../apiHandler";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";

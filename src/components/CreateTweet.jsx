@@ -3,14 +3,35 @@ import Avatar from "./Avatar";
 // import TwittButton from "./TwittButton";
 import SmallIcon from "./SmallIcon";
 import { postApi } from "../apiHandler";
-import { useState } from "react";
+import { CallBackEnd } from "../apiHandler";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+
 function CreateTweet() {
   const [tweetContent, setTweetContent] = useState("");
+  const { token, User } = useSelector((state) => state);
+  const params = useParams();
+  const [user, setUser] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const getOneUser = async () => {
+      setUser(await CallBackEnd("users/" + User.userName, token));
+      setIsLoading(false);
+    };
+    getOneUser();
+  }, [params.userName, token, User]);
+
+  if (isLoading) {
+    return <>Está cargando</>;
+  }
 
   return (
     <>
       <div className="tweet-form px-3 pt-2 pb-3 d-flex border-bottom">
-        <Avatar></Avatar>
+        <Avatar user={user}></Avatar>
         <div className="flex-fill overflow-auto">
           <div className="tweet-content overflow-auto">
             <div id="new-tweet-content">

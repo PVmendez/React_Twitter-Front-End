@@ -1,25 +1,33 @@
 import { LeftSidebar } from "../components/LeftSidebar";
 import { RightSidebar } from "../components/RightSidebar";
+import { TweetsOptions } from "../components/TweetsOptions";
 import Tweet from "../components/Tweet";
+import Avatar from "../components/Avatar";
 import stylesLayout from "./Layout.module.css";
 import styles from "./Profile.module.css";
 import { useParams, Link } from "react-router-dom";
-import Avatar from "../components/Avatar";
-import { TweetsOptions } from "../components/TweetsOptions";
+import { useState, useEffect } from "react";
+import { callBackEnd } from "../apiHandler";
 
 export const Profile = () => {
   const params = useParams();
-  const nameAuth = "Chayanne";
-  const tweetList = 1;
-  const user = [
-    {
-      id: 1,
-      name: "Jorge Bazalto",
-      username: "jorgeBazalto",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure dignissimos repudiandae ab non neque aliquam distinctio sunt voluptate nostrum! Aliquam a dicta saepe voluptatibus neque, omnis aut aliquid ullam earum.",
-      photo: "https://pbs.twimg.com/profile_images/1540810647604183046/OhYhwdAi_400x400.jpg",
-    },
-  ];
+  const [user, setUser] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const getOneUser = async () => {
+      setUser(await callBackEnd("users/" + params.userName));
+      setIsLoading(false);
+    };
+    getOneUser();
+  }, [params.userName]);
+
+  if (isLoading) {
+    return <>Está cargando</>;
+  }
+
+  console.log(user);
 
   return (
     <>
@@ -44,36 +52,31 @@ export const Profile = () => {
               >
                 <div className="d-flex flex-column justify-content-center">
                   <div className="mb-3">
-                    <Avatar photo={user.photo} />
+                    <Avatar key={user.id} user={user} />
                   </div>
 
-                  <h2 className="fw-bolder fs-6">Elmer Figueroa Arce</h2>
-                  <p className="text-muted m-0 fs-7">@Chayanne</p>
-                  <p className="my-1 fs-7">
-                    Cantante, compositor, bailarín y actor puertorriqueño. Como solista, ha lanzado
-                    22 álbumes de estudio y se estima que ha vendido entre 15 Link 40 millones de
-                    discos a nivel mundial lo que lo convierte en uno de los artistas latinos con
-                    mayores ventas.
-                  </p>
+                  <h2 className="fw-bolder fs-6">{user.firstName}</h2>
+                  <p className="text-muted m-0 fs-7">@{user.userName}</p>
+                  <p className="my-1 fs-7">{user.description}</p>
                   <p className="">
                     <span className="text-muted fs-7 me-2">
                       <Link to="/user/Chayanne/following">
                         <span className="text-black fw-bold" id="following-count">
-                          25
+                          25{" "}
                         </span>
                         Following
                       </Link>
                     </span>
                     <span className="text-muted fs-7 me-2">
                       <Link to="/user/Chayanne/followers">
-                        <span className="text-black fw-bold">1M</span>
+                        <span className="text-black fw-bold">1M </span>
                         Followers
                       </Link>
                     </span>
                   </p>
                 </div>
                 <div>
-                  {params.name === nameAuth ? (
+                  {true ? (
                     <Link
                       to=""
                       type="button"
@@ -99,7 +102,15 @@ export const Profile = () => {
                 <TweetsOptions option="Media" />
                 <TweetsOptions option="Likes" />
               </div>
-              {/* <div id="tweets-section">{tweetList > 0 ? <Tweet /> : <div>No hay tweets</div>}</div> */}
+              {
+                <div id="tweets-section">
+                  {user.tweetList.length ? (
+                    user.tweetList.map((t) => <Tweet key={t._id} tweet={t} />)
+                  ) : (
+                    <div>No hay tweets{console.log(user)}</div>
+                  )}
+                </div>
+              }
             </section>
           </main>
         </div>

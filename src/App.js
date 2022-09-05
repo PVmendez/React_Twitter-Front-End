@@ -8,7 +8,10 @@ import { Profile } from "./pages/Profile";
 import SingleTweet from "./pages/SingleTweet";
 import { Followers } from "./pages/Followers";
 
+
 function App() {
+	
+
   return (
     <Routes>
       <Route path="/" element={<Landing />} />

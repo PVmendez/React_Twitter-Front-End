@@ -4,23 +4,13 @@ import "./css/Tweet.css";
 const likes = true;
 
 function Tweet({ tweet }) {
-  console.log(tweet);
   return (
     <>
-      <article className="tweet p-3 d-flex border-bottom">
-        <Avatar user={tweet.author} />
-        <div className="flex-fill">
-          <div className="d-flex justify-content-between align-items-center">
-            <Link
-              to={`/${tweet.author.userName}`}
-              className="fs-7 fw-bold m-0 text-black text-decoration-none"
-            >
-              <span className="hover-underline">Ibai Llanos</span>
-              <span className="fw-normal text-secondary ms-1">@ibai&middot;</span>
-              <span className="fw-normal text-secondary ms-1 hover-underline">1m</span>
-            </Link>
-
-            <div className="dropdown">
+      <Link to={`/tweet/${tweet._id}`}>
+        <article className="tweet p-3 d-flex border-bottom">
+          <Avatar user={tweet.author} />
+          <div className="flex-fill">
+            <div className="d-flex justify-content-between align-items-center">
               <Link
                 to={`/${tweet.author.userName}`}
                 className="fs-7 fw-bold m-0 text-black text-decoration-none"
@@ -130,8 +120,8 @@ function Tweet({ tweet }) {
               </Link>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </Link>
     </>
   );
 }

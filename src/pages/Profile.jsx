@@ -7,7 +7,7 @@ import stylesLayout from "./Layout.module.css";
 import styles from "./Profile.module.css";
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { callBackEnd } from "../apiHandler";
+import { getApi, patchApi } from "../apiHandler";
 
 export const Profile = () => {
   const params = useParams();
@@ -17,7 +17,7 @@ export const Profile = () => {
   useEffect(() => {
     setIsLoading(true);
     const getOneUser = async () => {
-      setUser(await callBackEnd("users/" + params.userName));
+      setUser(await getApi("users/" + params.userName));
       setIsLoading(false);
     };
     getOneUser();
@@ -35,24 +35,27 @@ export const Profile = () => {
         <LeftSidebar />
         <div className="border-start border-end">
           <main className="border p-0">
-            <section className={`container-fluid -0 ${styles.section}`}>
+            <section className={`container-fluid p-0 ${styles.section}`}>
               <div className="border-bottom px-3 py-2 d-flex align-items-center sticky-top bg-white">
                 <Link
                   to="/home"
                   className="btn-gray rounded-circle p-2 d-flex justify-content-center align-items-center"
                 ></Link>
                 <div className="d-flex flex-column justify-content-center ms-3">
-                  <h2 className="fs-6 m-0 fw-bold">Elmer Figueroa Arce</h2>
-                  <span className="text-muted fs-8">0 Tweets</span>
+                  <h2 className="fs-6 m-0 fw-bold">{user.firstName}</h2>
+                  <span className="text-muted fs-8">{user.tweetList.length} Tweets</span>
                 </div>
               </div>
-              <header className={`${styles.header}`}></header>
+              <header
+                className={`${styles.header}`}
+                style={{ backgroundImage: `url(${user.coverPhoto})` }}
+              ></header>
               <div
                 className={`d-flex justify-content-between align-content-start p-3 position-relative border-bottom ${styles.profileinfo}`}
               >
                 <div className="d-flex flex-column justify-content-center">
                   <div className="mb-3">
-                    <Avatar key={user.id} user={user} />
+                    <Avatar user={user} />
                   </div>
 
                   <h2 className="fw-bolder fs-6">{user.firstName}</h2>
@@ -62,37 +65,40 @@ export const Profile = () => {
                     <span className="text-muted fs-7 me-2">
                       <Link to="/user/Chayanne/following">
                         <span className="text-black fw-bold" id="following-count">
-                          25{" "}
+                          {user.followingList.length + " "}
                         </span>
                         Following
                       </Link>
                     </span>
                     <span className="text-muted fs-7 me-2">
                       <Link to="/user/Chayanne/followers">
-                        <span className="text-black fw-bold">1M </span>
+                        <span className="text-black fw-bold">{user.followerList.length + " "}</span>
                         Followers
                       </Link>
                     </span>
                   </p>
                 </div>
                 <div>
-                  {true ? (
-                    <Link
-                      to=""
+                  {user.followerList.includes("631223cb431ae89ba7349c3c") ? (
+                    <button
                       type="button"
-                      className="px-3 py-2 fw-bold fs-7 btn-outline-secondary rounded-pill follow-edit-button"
-                      data-bs-toggle="modal"
-                      data-bs-target="#EditModal"
+                      className="btn btn-dark text-white rounded-4"
+                      onClick={async () => {
+                        console.log(await patchApi(`users/${user.userName}`));
+                      }}
                     >
-                      <svg viewBox="0 0 24 24" className="d-xl-none"></svg>
-                      <span className="mx-2 d-none d-xl-inline">Edit Profile</span>
-                    </Link>
+                      Unfollow
+                    </button>
                   ) : (
-                    <form action="/unfollow" method="POST">
-                      <button type="submit" className="btn btn-dark text-white rounded-4">
-                        Follow
-                      </button>
-                    </form>
+                    <button
+                      type="button"
+                      className="btn btn-dark text-white rounded-4"
+                      onClick={async () => {
+                        console.log(await patchApi(`users/${user.userName}`));
+                      }}
+                    >
+                      Follow
+                    </button>
                   )}
                 </div>
               </div>

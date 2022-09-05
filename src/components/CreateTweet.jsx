@@ -25,6 +25,7 @@ function CreateTweet() {
                 maxLength="140"
                 resize="none"
                 value={tweetContent}
+                required
               />
             </div>
           </div>

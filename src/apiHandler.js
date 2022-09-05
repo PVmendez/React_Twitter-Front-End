@@ -11,3 +11,8 @@ export const postApi = async (endpoint, item) => {
   const response = await axios.post(url + endpoint, item);
   return response.data;
 };
+
+export const patchApi = async (endpoint) => {
+  const response = await axios.patch(url + endpoint);
+  return response.data;
+};
